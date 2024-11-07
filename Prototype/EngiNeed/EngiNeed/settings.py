@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import dj_database_url
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-23!kcz*wx@3*m428!8t&g1l(oeo3zqr7$uf*!3#%3#5(wfh19+'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -78,13 +80,15 @@ WSGI_APPLICATION = 'EngiNeed.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresSQL',
-        'NAME': 'EngiNeed',
-        'USER': 'postgres',
-        'PASSWORD': 'EngiNeed',
-        'HOST': 'localhost'
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
+
+#postgresql://engineed_user:oTiCGeXiEaLFjtoyJAWdVzMaSxHgoBub@dpg-csmd5v3qf0us7380jmu0-a.oregon-postgres.render.com/engineed
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
