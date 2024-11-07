@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import dj_database_url
+import os
+
 
 from pathlib import Path
 
@@ -27,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
 
 
 # Application definition
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'EngiNeed_5',  # add your app here
 ]
 
 MIDDLEWARE = [
@@ -53,7 +56,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'EngiNeed.urls'
 
-import os
 
 TEMPLATES = [
     {
@@ -79,10 +81,11 @@ WSGI_APPLICATION = 'EngiNeed.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresSQL',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
 
 
 database_url = os.environ.get("DATABASE_URL")
