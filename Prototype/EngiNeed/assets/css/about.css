@@ -224,7 +224,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('BG.png') no-repeat center center fixed; /* Fixed background */
+  background: url('/static/images/BG.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Ensure the image covers the entire background */
   max-height: 750px;
 }
@@ -274,7 +274,7 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
-  background: url('BG.png') no-repeat center center fixed; /* Fixed background */
+  background: url('/static/images/BG.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Ensure the image covers the entire background */
 }
 
@@ -306,7 +306,7 @@
   background-size: cover;
   position: relative;
   color: #fff;
-  background-image: linear-gradient(to bottom, rgba(163, 99, 97, 0.7) 0%, rgba(211, 162, 157, 0.7) 50%, rgba(232, 178, 152, 0.7) 100%), url('email bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(163, 99, 97, 0.7) 0%, rgba(211, 162, 157, 0.7) 50%, rgba(232, 178, 152, 0.7) 100%), url('/static/images/email bg.jpg');
 }
 
 
@@ -373,7 +373,7 @@
   background-size: cover;
   position: relative;
   color: #fff;
-  background-image: linear-gradient(to bottom, rgba(163, 99, 97, 0.7) 0%, rgba(211, 162, 157, 0.7) 50%, rgba(232, 178, 152, 0.7) 100%), url('mess bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(163, 99, 97, 0.7) 0%, rgba(211, 162, 157, 0.7) 50%, rgba(232, 178, 152, 0.7) 100%), url('/static/images/mess bg.jpg');
 }
 
 .contact__content__2 form {
@@ -887,7 +887,7 @@
   justify-content: center;
   align-items: center;
   z-index: 999; /* Ensure popup is on top */
-  background: url('BG.png') no-repeat center center fixed; /* Fixed background */
+  background: url('/static/images/BG.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Ensure the image covers the entire background */
 }
 

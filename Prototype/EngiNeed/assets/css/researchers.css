@@ -220,7 +220,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('BG.png') no-repeat center center fixed; /* Fixed background */
+  background: url('/static/images/BG.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Ensure the image covers the entire background */
 }
 
@@ -299,7 +299,7 @@ html{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('BG.png') no-repeat center center fixed; /* Fixed background */
+  background: url('/static/images/BG.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Ensure the image covers the entire background */
   height: 100vh;
 }
@@ -437,7 +437,7 @@ html{
   justify-content: center;
   align-items: center;
   z-index: 999; /* Ensure popup is on top */
-  background: url('BG.png') no-repeat center center fixed; /* Fixed background */
+  background: url('/static/images/BG.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Ensure the image covers the entire background */
 }
 
