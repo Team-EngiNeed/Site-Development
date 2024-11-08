@@ -129,10 +129,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'EngiNeed/static')
+    os.path.join(BASE_DIR, 'static')
 ]
-
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 # Default primary key field type
