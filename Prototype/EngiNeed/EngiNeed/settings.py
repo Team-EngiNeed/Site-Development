@@ -87,10 +87,11 @@ DATABASES = {
 }
 
 
-
-
-DATABASES["default"] = dj_database_url.parse("postgresql://engineed_user:oTiCGeXiEaLFjtoyJAWdVzMaSxHgoBub@dpg-csmd5v3qf0us7380jmu0-a.oregon-postgres.render.com/engineed")
-
+DATABASES = {
+    'default': dj_database_url.parse(
+        os.getenv("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
+}
 #postgresql://engineed_user:oTiCGeXiEaLFjtoyJAWdVzMaSxHgoBub@dpg-csmd5v3qf0us7380jmu0-a.oregon-postgres.render.com/engineed
 
 # Password validation
@@ -129,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
+    os.path.join(BASE_DIR, 'EngiNeed/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
